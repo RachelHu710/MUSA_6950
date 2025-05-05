@@ -1,34 +1,33 @@
-# MUSA_6950 Final Project
-🌿 Urban Greenery Mapping using UNet and PSPNet
+# 🌿 Mapping Urban Greenery Using UNet and PSPNet
 
-This project aims to detect visible urban greenery (e.g., trees, shrubs, grass) from street-level imagery using semantic segmentation models (UNet and PSPNet). The final goal is to generate greenery density maps to support urban sustainability assessments.
+This repository contains a complete pipeline for segmenting urban greenery from street-level images using semantic segmentation models (UNet and PSPNet), and evaluating the results through metrics and visualization.
 
-📌 Project Overview
-	•	Objective: Automatically segment visible greenery in street-view images using deep learning, and visualize results spatially.
-	•	Models Used:
-	•	UNet – accurate for fine-grained vegetation details.
-	•	PSPNet – good for understanding global context in complex scenes.
-	•	Application Area: Diamond Bar, CA
-	•	Annotation Tool: Labelme (rectangle annotations for green_tree, shrub, grass)
+---
 
- 📁 Project Structure
- urban_greenery_project/
-├── data/
-│   ├── raw/                    # Original street images
-│   ├── annotations/           # Original Labelme JSON files
-│   ├── masks/                 # Converted mask images (.png)
-│   └── train/
-│       ├── images/            # Training images
-│       └── masks/             # Training masks
-│   └── test/
-│       ├── images/            # Training images
-│       └── masks/             # Training masks
-├── models/
-│   ├── unet.pth               # Trained UNet model
-│   └── pspnet.pth             # Trained PSPNet model
-├── notebooks/
-│   ├── 01_Download_Street_Diamond.ipynb    # Download Street images in Diamond bar
-│   ├── 02_Unet_train_green.ipynb    # Train UNet
-│   ├── 03_PSPNet_train_green.ipynb  # Train PSPNet
-│   ├── 04_eval_visualize.ipynb # Evaluate and visualize results
-└── README.md
+## 📌 Overview
+
+- **Goal:** Accurately detect visible greenery (trees, shrubs, grass) from street-view imagery.
+- **Models:** UNet and PSPNet (trained from scratch).
+- **Data Source:** Manually downloaded and annotated street images from Diamond Bar, California.
+- **Annotation Tool:** Labelme (rectangle format).
+- **Final Output:** Predicted masks + metrics + optional visualization overlays.
+
+---
+
+## 📁 Project Contents
+
+### Key Files and Directories
+
+| File / Folder                     | Description |
+|----------------------------------|-------------|
+| `Download_Street_Diamond.ipynb`  | (Optional) Download street-view images |
+| `green_images_Diamond_bar/`      | Folder with images + `Labelme` JSON annotations |
+| `test_images_Diamond_bar/`       | Test images + masks for evaluation |
+| `Unet_train_green.ipynb`         | Training notebook for UNet |
+| `PSPNet_train_green.ipynb`       | Training notebook for PSPNet |
+| `eval_visualize.ipynb`           | Evaluation and visualization notebook |
+| `unet_greenery_segmentation.pth` | Trained UNet model weights |
+| `pspnet_greenery.pth`            | Trained PSPNet model weights |
+| `Final_Project_Proposal_Nature`  | Project proposal draft |
+| `MUSA_6950.pdf`                  | Final project presentation |
+| `Final_pytorch_mask_r_cnn.ipynb`| [Optional] earlier experiment with Mask R-CNN |
